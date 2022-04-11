@@ -1,0 +1,421 @@
+////////////////////
+<html>
+<head>
+  <link rel="stylesheet" href="home.css">
+  <title>My Website</title>
+</head>
+<body class="body">
+  <section id="header">
+    <div class="header container">
+      <div class="nav-bar">
+        <div class="brand">
+          <h1>TOUR GUIDE</h1>
+        </div>
+        <div class="nav-list">
+          <div><div class="bar"></div></div>
+          <ul>
+            <li><a href="home.html" >Home</a></li>
+            <li><a href="login.html" >Login</a></li>
+            <li><a href="signup.html" >Signup</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+   <h1> <marquee behavior="scroll" direction="right"></marquee> </h1>
+  </section>
+
+<section id="contact">
+    <div class="contact container">
+      <div><h1>TRAVEL AND TOURISM</h1></div>
+    </div>
+  </section>
+
+  <section id="footer">
+    <div class="footer container">
+      <div class="brand" ><h1>TRAVEL AND TOURISM</h1></div>
+      <h2>A SAFE JOURNEY AND HAPPY HOLIDAY</h2>
+      <div class="social-icon">
+        <div class="social-item">
+          <a href="#"><img src="https://img.icons8.com/bubbles/100/000000/facebook-new.png"/></a>
+        </div>
+        <div class="social-item">
+          <a href="#"><img src="https://img.icons8.com/bubbles/100/000000/instagram-new.png"/></a>
+        </div>
+        <div class="social-item">
+          <a href="#"><img src="https://img.icons8.com/bubbles/100/000000/twitter.png"/></a>
+        </div>
+        <div class="social-item">
+          <a href="#"><img src="https://img.icons8.com/bubbles/100/000000/linkedin.png"/></a>
+        </div>
+      </div>
+    </div>
+  </section>
+</body>
+</html>
+
+/////////////
+body {
+   background-image: url('travel.jpg');
+   background-repeat: no-repeat;
+   background-size: cover;
+} 
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+html {
+  font-size: 10px;
+  font-family: 'Montserrat', sans-serif;
+  scroll-behavior: smooth;
+}
+a {
+  text-decoration: none;
+}
+.container {
+  min-height: 100vh;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#header {
+  position: fixed;
+  z-index: 1000;
+  left: 0;
+  top: 0;
+  width: 100vw;
+  height: auto;
+}
+#header .header {
+  min-height: 8vh;
+  background-color: rgba(31, 30, 30, 0.24);
+  transition: .3s ease background-color;
+}
+#header .nav-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  height: 100%;
+  max-width: 1300px;
+  padding: 0 10px;
+}
+#header .nav-list ul a {
+  font-size: 2.5rem;
+  font-weight: 500;
+  letter-spacing: .2rem;
+  text-decoration: none;
+  color: white;
+  text-transform: uppercase;
+  padding: 20px;
+  display: block;
+}
+
+#contact .contact {
+  flex-direction: column;
+  max-width: 1200px;
+  margin: 0 auto;
+  font-size:60px;
+}
+#footer {
+  background-image: linear-gradient(60deg, #29323c 0%, #485563 100%);
+}
+#footer .footer {
+  min-height: 200px;
+  flex-direction: column;
+  padding-top: 50px;
+  padding-bottom: 10px;
+}
+#footer h2 {
+  color: white;
+  font-weight: 500;
+  font-size: 1.8rem;
+  letter-spacing: .1rem;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+#footer .social-icon {
+  display: flex;
+  margin-bottom: 30px;
+}
+#footer .social-item {
+  height: 50px;
+  width: 50px;
+  margin: 0 5px;
+}
+#footer .social-item img {
+  filter: grayscale(1);
+  transition: .3s ease filter;
+}
+#footer .social-item:hover img {
+  filter: grayscale(0);
+}
+#footer p {
+  color: white;
+  font-size: 1.3rem;
+}
+
+@media only screen and (min-width: 1200px) {
+  #header .hamburger {
+    display: none;
+  }
+  #header .nav-list ul {
+    position: initial;
+    display: block;
+    height: auto;
+    width: fit-content;
+    background-color: transparent;
+  }
+  #header .nav-list ul li {
+    display: inline-block;
+  }
+  #header .nav-list ul li a {
+    font-size: 1.8rem;
+  }
+  #header .nav-list ul a:after {
+    display: none;
+  }
+}
+
+///////////////
+<html>
+<head>
+  <title>Login</title>
+  <link rel="stylesheet" type="text/css" href="login_style.css">
+  <script type="text/javascript">
+    function validate(){
+      var em=document.getElementById('email').value;
+      alert(em);
+      var pwd=document.getElementById('pword').value;
+      alert(pwd);
+      if(em.length<8){
+      alert('the username minimum length should be 8');
+      document.getElementById('email').focus();
+      return false;
+      }
+      if(pwd.length<8){
+      alert('the password minimum length should be 8');
+      document.getElementById('pword').focus();
+      return false;
+      }
+      return true;
+      }
+  </script>
+</head>
+
+<body class="body">
+<div class="login-page">
+  <div class="form">
+    <center><h2>Login</h2></center>
+    <form method="post" action="login.jsp" onsubmit="return validate();">
+      <input type="email" name="email" id="email" placeholder="Email" required autofocus placeholder="Enter your email" value="" required="required" />
+      <input type="password" name="pword" id="pword" placeholder="Password" required placeholder="Choose Password" value="" required="required" />
+      <br>
+      <br>
+      <button>LOGIN</button>
+      <p class="message"></p>
+      <br><br>
+      <center><b onclick="window.location.href='home.html'">Go to Home Page</b></center>
+    </form>
+  </div>
+</div>
+</body>
+</html>
+
+
+///////////////
+
+body {
+   background-image: url('travel.jpg');
+   background-repeat: no-repeat;
+   background-size: cover;
+} 
+.login-page {
+  width: 360px;
+  padding: 8% 0 0;
+  margin: auto;
+
+}
+.form input {
+
+  outline: 0;
+  background: white;
+  width: 100%;
+  border: 0;
+  margin: 0 0 15px;
+  padding: 15px;
+  box-sizing: border-box;
+  font-size: 14px;
+border-radius:10px;
+  
+}
+.form button {
+  font-size: 14px;
+  font-weight: bold;
+  letter-spacing: .1em;
+  outline: 0;
+  background: black;
+  width: 100%;
+  border: 0;
+  border-radius:30px;
+  margin: 0px 0px 8px;
+  padding: 15px;
+  color: #ccccff;
+  -webkit-transition: all 0.3 ease;
+  transition: all 0.3 ease;
+  cursor: pointer;
+  transition: all 0.2s;
+
+
+}
+.form button:hover,.form button:focus {
+  background: powderblue;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+  transform: translateY(-4px);
+}
+.form button:active {
+  transform: translateY(2px);
+  box-shadow: 0 2.5px 5px rgba(0, 0, 0, 0.2);
+}
+
+.form .message {
+  
+  margin: 6px 6px;
+  color: #808080;
+  font-size: 11px;
+  text-align: center;
+  font-weight: bold;
+  font-style: normal;
+
+  
+
+}
+.form .message a {
+  color: #FFFFFF;
+  text-decoration: none;
+  font-size: 13px;
+}
+
+
+
+//////////////////
+<html>
+  <head>
+      <title>Sign Up</title>
+      <link rel="stylesheet" type="text/css" href="signup_style.css" />
+    <script type="text/javascript">
+      function validate(){
+      var fn=document.getElementById('fullname').value;
+      alert(fn);
+      var em=document.getElementById('email').value;
+      alert(em);
+      var nm=document.getElementById('number').value;
+      alert(nm);
+      var pw=document.getElementById('password').value;
+      alert(pw);
+      if(fn.length<8){
+      alert('the username length should be minimum of 8')
+      document.getElementById('fullname').focus();
+      return false;
+      }
+      if(em.length<8){
+      alert('the password length should be minimum of 8')
+      document.getElementById('email').focus();
+      return false;
+      }
+      if(nm.length<8){
+      alert('the email length should be minimum of 8')
+      document.getElementById('number').focus();
+      return false;
+      }
+      if(pw.length<8){
+      alert('the phonenumber length should be minimum of 10')
+      document.getElementById('password').focus();
+      return false;
+      }
+        return true;
+      }
+      </script>
+    </head>
+
+    <body class="body">
+      <div class="login-page">
+        <div class="form">
+          <center><h2>Signup</h2></center>
+          <form method="post" action="signup.jsp" onsubmit="return validate();">
+            <label for="name" >Full Name: </label>
+                    <input type="text" name="fullname" id="fullname" required autofocus placeholder="Enter your name" required="required">
+                    <br><br>
+                    <label for="Email">E-mail: </label>
+                    <input type="email" name="email" id="email" required placeholder="Enter your E-Mail ID" required="required">
+                    <br><br>
+                    <label for="Phone">Phone Number: </label>
+                    <input type="tel" name="number" id="number" required placeholder="Enter your Phone Number" required="required">
+                    <br><br>
+                    <label for="password">Password: </label>
+                    <input type="password" name="password" id="password" min="6" max="16" required placeholder="Choose Password" title="Please enter valid password" required="required">
+                    <br><br>
+                    <label for="gender">Gender: </label>
+                    <select name="Gender" id="gender">
+                        <option value=""></option>
+                        <option value="Male">Male</option>
+                        <option value="Female">Female</option>
+                        <option value="Consider not to say">Consider Not to Say</option>
+                    </select>
+                    <br><br>                
+                <button type="submit">Sign Up</button>
+                <center><p><b>already have an account?</b></p></center>
+                <center><b type="button" onclick="window.location.href='login.html'" >Login</b></center>
+                <center><b onclick="window.location.href='home.html'">Go to Home page</b></center>
+          </form>
+        </div>
+      </div>
+    </body>
+  </html>
+</html>
+
+///////////////////
+@import url(https://fonts.googleapis.com/css?family=Roboto:300);
+
+body {
+   background-image: url('travel.jpg');
+   background-repeat: no-repeat;
+   background-size: cover;
+} 
+
+.login-page {
+  width: 360px;
+  padding: 8% 0 0;
+  margin: auto;
+
+}
+
+.form input {
+  font-family: FontAwesome, "Roboto", sans-serif;
+  outline: 0;
+  background: #f2f2f2;
+  width: 100%;
+  border: 0;
+  margin: 0 0 15px;
+  padding: 15px; 
+  box-sizing: border-box;
+  font-size: 14px;
+  border-radius:10px;
+  
+}
+.form button {
+  font-family: "Titillium Web", sans-serif;
+  font-size: 14px;
+  font-weight: bold;
+  letter-spacing: .1em;
+  outline: 0;
+  background: black;
+  width: 100%;
+  border: 0;
+  border-radius:30px;
+  margin: 0px 0px 8px;
+  padding: 15px;
+  color: #ccccff;
+}

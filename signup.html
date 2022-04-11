@@ -1,0 +1,74 @@
+<html>
+  <head>
+      <title>Sign Up</title>
+      <link rel="stylesheet" type="text/css" href="signup_style.css" />
+    <script type="text/javascript">
+      function validate(){
+      var fn=document.getElementById('fullname').value;
+      alert(fn);
+      var em=document.getElementById('email').value;
+      alert(em);
+      var nm=document.getElementById('number').value;
+      alert(nm);
+      var pw=document.getElementById('password').value;
+      alert(pw);
+      if(fn.length<8){
+      alert('the username length should be minimum of 8')
+      document.getElementById('fullname').focus();
+      return false;
+      }
+      if(em.length<8){
+      alert('the password length should be minimum of 8')
+      document.getElementById('email').focus();
+      return false;
+      }
+      if(nm.length<8){
+      alert('the email length should be minimum of 8')
+      document.getElementById('number').focus();
+      return false;
+      }
+      if(pw.length<10){
+      alert('the phonenumber length should be minimum of 10')
+      document.getElementById('password').focus();
+      return false;
+      }
+        return true;
+      }
+      </script>
+    </head>
+
+    <body class="body">
+      <div class="login-page">
+        <div class="form">
+          <center><h2>Signup</h2></center>
+          <form method="post" action="signup.jsp" onsubmit="return validate();">
+            <label for="name" >Full Name: </label>
+                    <input type="text" name="fullname" id="fullname" required autofocus placeholder="Enter your name" required="required">
+                    <br><br>
+                    <label for="Email">E-mail: </label>
+                    <input type="email" name="email" id="email" required placeholder="Enter your E-Mail ID" required="required">
+                    <br><br>
+                    <label for="Phone">Phone Number: </label>
+                    <input type="tel" name="number" id="number" required placeholder="Enter your Phone Number" required="required">
+                    <br><br>
+                    <label for="password">Password: </label>
+                    <input type="password" name="password" id="password" min="6" max="16" required placeholder="Choose Password" title="Please enter valid password" required="required">
+                    <br><br>
+                    <label for="gender">Gender: </label>
+                    <select name="Gender" id="gender">
+                      <option value=></option>
+                        <option value="Male">Male</option>
+                        <option value="Female">Female</option>
+                        <option value="Consider not to say">Consider Not to Say</option>
+                    </select>
+                    <br><br>                
+                <button type="submit">Sign Up</button>
+                <center><b><p>already have an account?</p></b></center>
+                <center><p><a href="signup.html">Register</a></p></center>
+                <center><b onclick="window.location.href='home.html'">Go to Home page</b></center>
+          </form>
+        </div>
+      </div>
+    </body>
+  </html>
+</html>
